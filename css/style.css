@@ -1,6 +1,6 @@
-*,
-*::before,
-*::after {
+
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -109,11 +109,11 @@ header img {
     background-color: #e0f0ff;
 }
 
-/* Integrando a carousel no estilo da Card */
+
 .Card .carousel {
     position: relative;
     width: 100%;
-    height: 250px; /* Ajuste conforme necessário */
+    height: 250px; 
     overflow: hidden;
     border-radius: 10px;
 }
