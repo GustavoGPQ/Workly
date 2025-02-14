@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+header{
+    background-color: #0056A8;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header button{
+    padding: 10px;
+}
+
+header img{
+    margin-right: 1000px;
+}
+
+.Banner {
+    background-image: linear-gradient(rgba(0, 86, 168, 0.7), rgba(0, 86, 168, 0.7)), url(/img/Banner.png);
+    background-size: cover;
+    background-position: center; 
+    padding: 30px;
+    height: 400px; 
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.Banner h1 {
+    color: white; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 2.5rem;
+    text-align: center; 
+    width: 80%; 
+    line-height: 1.5;
+    z-index: 1; 
+}
+.Container {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.Card {
+    background-color: whitesmoke;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px; 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Card img {
+    width: 100%; 
+    height: auto;
+}
+
+.Card h3{
+    font-family: 'Arial', sans-serif; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Card p{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Card button{
+    border: none;
+    border-radius: 7px;
+    background-color: #0056A8;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.Card img{
+    border-radius: 5px;
+
+}
+
+
+footer{
+    background-color: #0056A8;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-family: 'Arial', sans-serif; 
+}
