@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js"></script>
     <title>Workly</title>
 </head>
 <body>
@@ -30,6 +31,7 @@
                 </div>
                 <h3>Sebrae - Centro</h3>
                 <p>Sala moderna, climatizada, com paredes de vidro, tomadas, quadro branco e projetor. Perfeita para reuniões e apresentações.</p>
+                <p id="dados">2 hr / $50</p>
                 <button onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')">Agendar</button>
             </div>
             
@@ -40,6 +42,7 @@
                 </div>
                 <h3>Parque Tecnológico - Areal</h3>
                 <p>Sala moderna, climatizada, com paredes de vidro, tomadas, quadro branco e projetor. Perfeita para reuniões e apresentações.</p>
+                <p id="dados">2 hr / $50</p>
                 <button onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')">Agendar</button>
             </div>
         </div>
@@ -49,52 +52,6 @@
         <h2>Copy Workly - 2025</h2>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const carousels = document.querySelectorAll(".carousel");
-
-            carousels.forEach(carousel => {
-                let index = 0;
-                const images = carousel.querySelectorAll("img");
-                const totalImages = images.length;
-
-                // Criar botões de navegação
-                const prevButton = document.createElement("button");
-                prevButton.innerHTML = "&#10094;";
-                prevButton.classList.add("prev");
-
-                const nextButton = document.createElement("button");
-                nextButton.innerHTML = "&#10095;";
-                nextButton.classList.add("next");
-
-                carousel.appendChild(prevButton);
-                carousel.appendChild(nextButton);
-
-                function showImage(i) {
-                    images.forEach(img => img.style.display = "none");
-                    images[i].style.display = "block";
-                }
-
-                showImage(index);
-
-                prevButton.addEventListener("click", function () {
-                    index = (index - 1 + totalImages) % totalImages;
-                    showImage(index);
-                });
-
-                nextButton.addEventListener("click", function () {
-                    index = (index + 1) % totalImages;
-                    showImage(index);
-                });
-            });
-            function showImage(i) {
-    images.forEach(img => {
-        img.style.opacity = "0";  
-    });
-    images[i].style.opacity = "1";  
-}
-        });
-    </script>
 </body>
 </html>
 
