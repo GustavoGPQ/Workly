@@ -210,7 +210,6 @@ footer {
     text-align: center;
     color: white;
 }
-
 @media (max-width: 1024px) {
     .Container {
         justify-content: center;
@@ -228,8 +227,9 @@ footer {
     }
 
     header ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        justify-content: center;
     }
 
     .Banner h1 {
@@ -243,6 +243,16 @@ footer {
 
     .Card {
         flex: 1 1 80%;
+    }
+
+   
+    header .menu li {
+        display: inline-block; 
+    }
+
+    header .menu li button {
+        width: auto;
+        white-space: nowrap;
     }
 }
 
