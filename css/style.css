@@ -1,6 +1,4 @@
-
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,8 +38,18 @@ header .menu li:last-child {
 header button {
     border: none;
     border-radius: 7px;
-    padding: 10px;
+    background-color: white; /* Fundo branco para os botões */
+    color: #0056A8; /* Cor do texto azul */
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header button:hover {
+    background-color: #004080; /* Cor de fundo no hover */
+    transform: scale(1.05);
 }
 
 header img {
@@ -109,11 +117,10 @@ header img {
     background-color: #e0f0ff;
 }
 
-
 .Card .carousel {
     position: relative;
     width: 100%;
-    height: 250px; 
+    height: 250px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -210,6 +217,7 @@ footer {
     text-align: center;
     color: white;
 }
+
 @media (max-width: 1024px) {
     .Container {
         justify-content: center;
@@ -245,9 +253,8 @@ footer {
         flex: 1 1 80%;
     }
 
-   
     header .menu li {
-        display: inline-block; 
+        display: inline-block;
     }
 
     header .menu li button {
