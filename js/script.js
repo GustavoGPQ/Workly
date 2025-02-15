@@ -1,35 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form"); // Seleciona o formulário corretamente
-    const messageDiv = document.getElementById("message");
+    const carousels = document.querySelectorAll(".carousel");
 
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault(); // Impede o envio padrão
+    carousels.forEach(carousel => {
+        let index = 0;
+        const images = carousel.querySelectorAll("img");
+        const totalImages = images.length;
 
-        const formData = new FormData(form);
 
-        try {
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: formData,
+        const prevButton = document.createElement("button");
+        prevButton.innerHTML = "&#10094;";
+        prevButton.classList.add("prev");
+
+        const nextButton = document.createElement("button");
+        nextButton.innerHTML = "&#10095;";
+        nextButton.classList.add("next");
+
+        carousel.appendChild(prevButton);
+        carousel.appendChild(nextButton);
+
+   
+        function showImage(i) {
+        
+            images.forEach(img => {
+                img.style.opacity = "0";
+                img.style.transition = "opacity 0.5s ease";
             });
 
-            if (response.ok) {
-                messageDiv.textContent = "Mensagem enviada com sucesso!";
-                messageDiv.classList.add("success");
-                messageDiv.style.display = "block";
-                form.reset(); // Limpa os campos do formulário
-
-                // Esconder mensagem após 5 segundos
-                setTimeout(() => {
-                    messageDiv.style.display = "none";
-                }, 5000);
-            } else {
-                throw new Error("Erro ao enviar formulário.");
-            }
-        } catch (error) {
-            messageDiv.textContent = "Erro ao enviar. Tente novamente.";
-            messageDiv.classList.add("error");
-            messageDiv.style.display = "block";
+            images[i].style.opacity = "1";
         }
+
+        showImage(index);
+
+        prevButton.addEventListener("click", function () {
+            index = (index - 1 + totalImages) % totalImages;
+            showImage(index);
+        });
+
+      
+        nextButton.addEventListener("click", function () {
+            index = (index + 1) % totalImages;
+            showImage(index);
+        });
     });
 });
