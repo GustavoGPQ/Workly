@@ -1,4 +1,4 @@
-// Menu hambúrguer
+
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const menu = document.querySelector("header ul.menu");
@@ -7,14 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.toggle("active");
     });
 
-    // Fecha o menu ao clicar fora dele
     document.addEventListener("click", (event) => {
         if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
             menu.classList.remove("active");
         }
     });
 
-    // Fecha o menu ao clicar em um item
+
     const menuItems = menu.querySelectorAll("li a");
     menuItems.forEach(item => {
         item.addEventListener("click", () => {
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Carrossel de imagens
+
 document.addEventListener("DOMContentLoaded", function () {
     const carousels = document.querySelectorAll(".carousel");
 
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const images = carousel.querySelectorAll("img");
         const totalImages = images.length;
 
-        // Pegamos os botões já presentes no HTML
+  
         const prevButton = carousel.querySelector(".prev");
         const nextButton = carousel.querySelector(".next");
 
