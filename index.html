@@ -1,55 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Workly - Agende salas de reunião modernas e equipadas para seus negócios.">
+    <meta name="keywords" content="reuniões, salas, agendamento, negócios, Sebrae, Parque Tecnológico">
+    <meta name="author" content="Workly">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/js/script.js" defer></script>
-    <title>Workly</title>
+    <title>Workly - Agende sua Sala</title>
 </head>
 <body>
+
     <header>
-        <img src="/img/logoo.png" alt="Logo-Workly">
+        <img src="/img/logoo.png" alt="Logo-Workly" class="logo">
+        
+        <!-- Menu Hambúrguer -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <nav>
             <ul class="menu">
-                <li><button onclick="window.location.href='#SebraeCentro'">Agendar</button></li>
-                <li><button onclick="window.location.href='form.html'">Contato</button></li>
+                <li><button onclick="window.location.href='#sebrae-centro'"><i class="fas fa-calendar-alt"></i> Agendar</button></li>
+                <li><button onclick="window.location.href='form.html'"><i class="fas fa-envelope"></i> Contato</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="Banner">
+        <section class="banner">
             <h1>Não se trata apenas de agendar reuniões, mas de escolher o espaço ideal para transformar cada encontro em um grande negócio.</h1>
         </section>
 
-        <div class="Container">
-            <div id="SebraeCentro" class="Card">
+        <div class="container">
+            <div id="sebrae-centro" class="card">
                 <div class="carousel">
-                    <img src="/img/Sebrae.png" alt="Sebrae - Centro">
+                    <img src="/img/Sebrae.png" alt="Sebrae - Centro" class="active">
                     <img src="/img/Parque.png" alt="Sebrae - Centro">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <h3>Sebrae - Centro</h3>
                 <p class="card-text">Sala moderna, climatizada, com paredes de vidro, tomadas, quadro branco e projetor. Perfeita para reuniões e apresentações.</p>
-                <p id="dados">2 hr / $50</p>
-                <button onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')">Agendar</button>
+                <div class="price">
+                    <span class="duration">2 horas</span>
+                    <span class="amount">R$ 50</span>
+                </div>
+                <button class="btn-agendar" onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')"><i class="fab fa-whatsapp"></i> Agendar</button>
             </div>
             
-            <div id="ParqueTecnologicoAreal" class="Card">
+            <div id="parque-tecnologico" class="card">
                 <div class="carousel">
-                    <img src="/img/Parque.png" alt="Parque Tecnológico">
+                    <img src="/img/Parque.png" alt="Parque Tecnológico" class="active">
                     <img src="/img/Sebrae.png" alt="Parque Tecnológico">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <h3>Parque Tecnológico - Areal</h3>
                 <p class="card-text">Sala moderna, climatizada, com paredes de vidro, tomadas, quadro branco e projetor. Perfeita para reuniões e apresentações.</p>
-                <p id="dados">2 hr / $50</p>
-                <button onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')">Agendar</button>
+                <div class="price">
+                    <span class="duration">2 horas</span>
+                    <span class="amount">R$ 50</span>
+                </div>
+                <button class="btn-agendar" onclick="window.open('https://api.whatsapp.com/send/?phone=555391179785&text=Oi+Desejo+agendar+uma+sala&type=phone_number&app_absent=0')"><i class="fab fa-whatsapp"></i> Agendar</button>
             </div>
         </div>
     </main>
 
     <footer>
-        <h2>Copy Workly - 2025</h2>
+        <p>© Workly - 2025</p>
     </footer>
+
 </body>
 </html>

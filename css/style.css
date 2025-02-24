@@ -5,7 +5,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
 header {
@@ -15,6 +17,12 @@ header {
     justify-content: space-between;
     padding: 20px;
     flex-wrap: wrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    max-width: 150px;
+    height: auto;
 }
 
 header ul {
@@ -22,17 +30,6 @@ header ul {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-}
-
-header .menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-header .menu li:last-child {
-    display: flex;
-    gap: 15px;
 }
 
 header button {
@@ -45,19 +42,18 @@ header button {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 header button:hover {
     background-color: #004080;
+    color: white;
     transform: scale(1.05);
 }
 
-header img {
-    max-width: 150px;
-    height: auto;
-}
-
-.Banner {
+.banner {
     background-image: linear-gradient(rgba(0, 86, 168, 0.7), rgba(0, 86, 168, 0.7)), url(/img/Banner.png);
     background-size: cover;
     background-position: center;
@@ -69,7 +65,7 @@ header img {
     padding: 30px;
 }
 
-.Banner h1 {
+.banner h1 {
     color: white;
     font-size: 2.5rem;
     width: 80%;
@@ -77,7 +73,7 @@ header img {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.596);
 }
 
-.Container {
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -85,47 +81,35 @@ header img {
     gap: 30px;
 }
 
-.Card {
-    background-color: whitesmoke;
+.card {
+    background-color: white;
     padding: 25px;
     flex: 1 1 calc(33.333% - 20px);
     max-width: 350px;
-    text-align: center;
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border: 1px solid #e0e0e0;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Card:hover {
+.card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.Card:hover h3 {
-    color: #0056A8;
-}
-
-.Card:hover p {
-    color: #333;
-}
-
-.Card:hover #dados {
-    color: #004080;
-    background-color: #e0f0ff;
-}
-
-.Card .carousel {
+.card .carousel {
     position: relative;
     width: 100%;
     height: 250px;
     overflow: hidden;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.Card .carousel img {
+.card .carousel img {
     position: absolute;
     top: 0;
     left: 0;
@@ -136,7 +120,7 @@ header img {
     transition: opacity 0.5s ease;
 }
 
-.Card .carousel img.active {
+.card .carousel img.active {
     opacity: 1;
 }
 
@@ -144,93 +128,170 @@ header img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 86, 168, 0.8);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 50%;
+    font-size: 24px;
+    border-radius: 5px;
     z-index: 10;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 86, 168, 1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carousel .prev {
-    left: 10px;
+    left: 15px;
 }
 
 .carousel .next {
-    right: 10px;
+    right: 15px;
 }
 
-.Card h3 {
-    margin: 15px 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.Card .card-text {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    text-align: justify;
-    padding: 10px;
-    background-color: rgba(240, 240, 240, 0.8);
-    border-radius: 5px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: 'Georgia', serif;
-}
-
-.Card .card-text:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
-}
-
-.Card .card-text::before {
-    content: "✧";
-    display: block;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #0056A8;
-    margin-bottom: 10px;
-}
-
-#dados {
+.price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
     margin-top: 15px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #0056A8;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
-    padding: 10px;
-    border-radius: 5px;
-    display: inline-block;
 }
 
-.Card button {
+.price .duration, .price .amount {
+    background-color: #e0f0ff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-agendar {
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     background-color: #0056A8;
     color: white;
-    margin-top: 15px;
-    padding: 12px 20px;
+    margin-top: 20px;
+    padding: 12px 24px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.Card button:hover {
+.btn-agendar:hover {
     background-color: #004080;
     transform: scale(1.05);
+}
+
+.btn-agendar i {
+    font-size: 1.2rem;
+}
+
+.card .card-text {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+    padding: 0;
+    transition: transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card:hover .card-text {
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0056A8;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.card:hover h3 {
+    color: #004080;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    header ul.menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0056A8;
+        padding: 10px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    header ul.menu.active {
+        display: flex;
+    }
+
+    header ul.menu li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 400px;
+        padding: 20px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn-agendar {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 footer {
@@ -238,68 +299,5 @@ footer {
     padding: 30px;
     text-align: center;
     color: white;
-}
-
-@media (max-width: 1024px) {
-    .Container {
-        justify-content: center;
-    }
-
-    .Card {
-        flex: 1 1 calc(50% - 20px);
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header ul {
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
-    }
-
-    .Banner h1 {
-        font-size: 2rem;
-    }
-
-    .Container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Card {
-        flex: 1 1 80%;
-    }
-
-    header .menu li {
-        display: inline-block;
-    }
-
-    header .menu li button {
-        width: auto;
-        white-space: nowrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .Banner {
-        padding: 20px;
-        height: 300px;
-    }
-
-    .Banner h1 {
-        font-size: 1.5rem;
-    }
-
-    .Card {
-        flex: 1 1 100%;
-    }
-
-    .Card button {
-        font-size: 0.9rem;
-    }
+    margin-top: 40px;
 }

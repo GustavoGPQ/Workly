@@ -1,3 +1,29 @@
+// Menu hambúrguer
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("header ul.menu");
+
+    menuToggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove("active");
+        }
+    });
+
+    // Fecha o menu ao clicar em um item
+    const menuItems = menu.querySelectorAll("li a");
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            menu.classList.remove("active");
+        });
+    });
+});
+
+// Carrossel de imagens
 document.addEventListener("DOMContentLoaded", function () {
     const carousels = document.querySelectorAll(".carousel");
 
@@ -6,21 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const images = carousel.querySelectorAll("img");
         const totalImages = images.length;
 
+        // Pegamos os botões já presentes no HTML
+        const prevButton = carousel.querySelector(".prev");
+        const nextButton = carousel.querySelector(".next");
 
-        const prevButton = document.createElement("button");
-        prevButton.innerHTML = "&#10094;";
-        prevButton.classList.add("prev");
-
-        const nextButton = document.createElement("button");
-        nextButton.innerHTML = "&#10095;";
-        nextButton.classList.add("next");
-
-        carousel.appendChild(prevButton);
-        carousel.appendChild(nextButton);
-
-   
         function showImage(i) {
-        
             images.forEach(img => {
                 img.style.opacity = "0";
                 img.style.transition = "opacity 0.5s ease";
@@ -36,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             showImage(index);
         });
 
-      
         nextButton.addEventListener("click", function () {
             index = (index + 1) % totalImages;
             showImage(index);
