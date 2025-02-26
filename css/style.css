@@ -246,6 +246,7 @@ header button:hover {
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        margin-left: 115px;
     }
 
     header ul.menu {
